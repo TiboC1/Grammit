@@ -7,7 +7,10 @@
             <img src="/svg/grammit.svg" alt="Grammit" style="height: 150px;" class="rounded-circle">
         </div>
         <div class="col-9 pt-5">
-            <h1>{{$user->username}}</h1>
+            <div class="d-flex justify-content-between align-items-baseline">
+                <h1>{{$user->username}}</h1>
+                <a href="#">Add New Post</a>
+            </div>
             <div class="d-flex">
                 <div class="pr-5"><strong>333</strong> posts</div>
                 <div class="pr-5"><strong>33k</strong> followers</div>
