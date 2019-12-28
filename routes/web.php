@@ -15,12 +15,7 @@ Route::get('/users/{id}', function($id){
 });
 */
 
-Route::get('/', 'PagesController@index')->name('home');
-Route::get('/about', 'PagesController@about');
-Route::get('/services', 'PagesController@services');
-
-
-
+Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 
 Auth::routes();
 
