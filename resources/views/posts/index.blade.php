@@ -2,6 +2,11 @@
 
 @section('content')
 <div class="container">
+    <div class="row text-center color-dark">
+        <h1 class="text-center">Recent posts from people you follow</h1>
+    </div>
+    <hr>
+
     @foreach ($posts as $post)
     <div class="row">
         <div class="col-6 offset-3 pb-3 d-flex align-items-center">
