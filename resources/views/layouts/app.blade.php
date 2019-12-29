@@ -33,6 +33,16 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    @guest
+                        
+                    @else
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/profile/{{Auth::user()->id}}">My Profile</a>
+                            </li>
+                        </ul>
+                    @endguest
+                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -70,11 +80,40 @@
             </div>
         </nav>
 
+    <!-- Main section -->
         <main class="py-4">
             <div class="container">
                 @yield('content')
             </div>
         </main>
     </div>
+
+    <footer class="page-footer font-small bg-dark pt-4 text-white w-100">
+
+        <!-- Footer Elements -->
+        <div class="container">
+      
+          <!-- Call to action -->
+          <ul class="list-unstyled list-inline text-center py-2">
+            <li class="list-inline-item">
+              <h5 class="mb-1">Register for free</h5>
+            </li>
+            <li class="list-inline-item">
+              <a href="/register" class="btn btn-primary btn-rounded">Sign up!</a>
+            </li>
+          </ul>
+          <!-- Call to action -->
+      
+        </div>
+        <!-- Footer Elements -->
+      
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">Check out my Github:
+          <a href="https://github.com/TiboC1"> Tibo Colman</a>
+        </div>
+        <!-- Copyright -->
+      
+      </footer>
+
 </body>
 </html>

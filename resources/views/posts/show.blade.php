@@ -27,7 +27,7 @@
             <p>
                 <span class="font-weight-bold">
                     <a href="/profile/{{$post->user->id}}">
-                        <span class="text-dark">{{$post->user->username}}</span>
+                        <span class="text-dark">{{$post->user->username}} - </span>
                     </a>
                 </span>{{$post->caption}}
             </p>
