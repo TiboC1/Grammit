@@ -63,6 +63,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    @can('update', $user->profile)
+                                        <a class="dropdown-item" href="/profile/{{$user->id}}/edit">Edit Profile</a>
+                                    @endcan
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -94,14 +97,16 @@
         <div class="container">
       
           <!-- Call to action -->
-          <ul class="list-unstyled list-inline text-center py-2">
-            <li class="list-inline-item">
-              <h5 class="mb-1">Register for free</h5>
-            </li>
-            <li class="list-inline-item">
-              <a href="/register" class="btn btn-primary btn-rounded">Sign up!</a>
-            </li>
-          </ul>
+          @guest
+            <ul class="list-unstyled list-inline text-center py-2">
+                <li class="list-inline-item">
+                <h5 class="mb-1">Register for free</h5>
+                </li>
+                <li class="list-inline-item">
+                <a href="{{ route('register') }}" class="btn btn-primary btn-rounded">Sign up!</a>
+                </li>
+            </ul>
+          @endguest
           <!-- Call to action -->
       
         </div>
@@ -109,7 +114,7 @@
       
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">Check out my Github:
-          <a href="https://github.com/TiboC1"> Tibo Colman</a>
+          <a href="https://github.com/TiboC1" target="_blank"> Tibo Colman</a>
         </div>
         <!-- Copyright -->
       
