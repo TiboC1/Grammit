@@ -63,9 +63,8 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    @can('update', $user->profile)
-                                        <a class="dropdown-item" href="/profile/{{$user->id}}/edit">Edit Profile</a>
-                                    @endcan
+                                    
+                                    <a class="dropdown-item" href="/profile/{{Auth::user()->id}}/edit">Edit Profile</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
