@@ -13,11 +13,15 @@
                         <img src="{{$post->user->profile->profileImage()}}" alt="" class="w-100 rounded-circle" style="max-width: 40px;">
                     </div>
                     <div>
-                        <div class="font-weight-bold">
+                        <div class="font-weight-bold d-flex">
                             <a href="/profile/{{$post->user->id}}">
                                 <span class="text-dark">{{$post->user->username}}</span>
                             </a>
-                            <a href="#" class="pl-3">Follow</a>
+                            @if (Auth::user()->id == $post->user->id)
+                    
+                            @else
+                                <follow-button user-id="{{Auth::user()->id}}" follows="{{$follows}}"></follow-button>
+                            @endif
                         </div>
                     </div>
                 </div>
